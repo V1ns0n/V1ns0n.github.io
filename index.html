@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -284,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T15:05:28+08:00">
                 2017-04-09
@@ -350,34 +350,35 @@
 <p>10</p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>一开始采用最简单粗暴的算法，两个循环一个个的判断这个queen之间是不是会有冲突，但是写完之后提交就发现<em>TLE</em>超时了，一开始以为是编程语言的关系（因为用的是Python写的），但是后来看了别人的思路之后才发现并不是这个原因，算法思路才是关键。思路大概是计算有多少个queen在相同的行，有多少在相同的列，有多少在相同的主对角线，有多少在相同的次对角线，然后用排列组合公式 $C_n^2=\frac{n\times(n-1)}{2}$ 来计算配对数。下面是我用Python写的代码，<em>AC</em></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>number = int(raw_input())
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="python">number = int(raw_input())
 queens = []
-count = 0
+count = <span class="number">0</span>
 row = dict()
 col = dict()
 right = dict()
 left = dict()
-def find_all(data_dict, data):
-    if data_dict.get(data) != None:
-        data_dict[data] += 1
-    else:
-        data_dict[data] =1
+<span class="function"><span class="keyword">def</span> <span class="title">find_all</span><span class="params">(data_dict, data)</span>:</span>
+    <span class="keyword">if</span> data_dict.get(data) != <span class="keyword">None</span>:
+        data_dict[data] += <span class="number">1</span>
+    <span class="keyword">else</span>:
+        data_dict[data] =<span class="number">1</span>
 
-for i in range(number):
-    x, y = [int(x) for x in raw_input().split()]
+<span class="keyword">for</span> i <span class="keyword">in</span> range(number):
+    x, y = [int(x) <span class="keyword">for</span> x <span class="keyword">in</span> raw_input().split()]
     queens.append((x,y))
-    find_all(row, queens[i][0])
-    find_all(col, queens[i][1])
-    find_all(right, queens[i][0]+queens[i][1])
-    find_all(left, queens[i][1]-queens[i][0])
+    find_all(row, queens[i][<span class="number">0</span>])
+    find_all(col, queens[i][<span class="number">1</span>])
+    find_all(right, queens[i][<span class="number">0</span>]+queens[i][<span class="number">1</span>])
+    find_all(left, queens[i][<span class="number">1</span>]-queens[i][<span class="number">0</span>])
 
-row_num = sum([value*(value-1)/2 for value in row.itervalues()])
-col_num = sum([value*(value-1)/2 for value in col.itervalues()])
-right_num = sum([value*(value-1)/2 for value in right.itervalues()])
-left_num = sum([value*(value-1)/2 for value in left.itervalues()])
+row_num = sum([value*(value<span class="number">-1</span>)/<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> row.itervalues()])
+col_num = sum([value*(value<span class="number">-1</span>)/<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> col.itervalues()])
+right_num = sum([value*(value<span class="number">-1</span>)/<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> right.itervalues()])
+left_num = sum([value*(value<span class="number">-1</span>)/<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> left.itervalues()])
 count = row_num + col_num + right_num + left_num
-print count
+<span class="keyword">print</span> count
 </code></pre>
+
           
         
       
@@ -457,7 +458,7 @@ print count
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T14:20:30+08:00">
                 2017-04-09
@@ -586,7 +587,7 @@ print count
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -640,7 +641,7 @@ print count
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
