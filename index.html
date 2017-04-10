@@ -247,6 +247,132 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/Hexo上Markdown使用的注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="V1ns0n">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="V1ns0n Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/10/Hexo上Markdown使用的注意事项/" itemprop="url">
+                  Hexo上Markdown使用的注意事项
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T15:31:15+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="0-代码块的引用"><a href="#0-代码块的引用" class="headerlink" title="#0:代码块的引用"></a>#0:代码块的引用</h2><p>代码块引用的语法是: </p>
+<blockquote>
+<p>(此处有1个空格)```language<br>code<br>(此处有1个空格)```</p>
+</blockquote>
+<p>language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。<br>开头加空格！开头加空格！开头加空格！重要事情说三遍！！！</p>
+<h2 id="1-Latex多行公式"><a href="#1-Latex多行公式" class="headerlink" title="#1:Latex多行公式"></a>#1:Latex多行公式</h2><p>行内公式是用\$夹住公式，如\$公式\$这样，比如\$\frac{1}{x}\$这样会出现$\frac{1}{x}$。<br>行外公式就是用两个\$夹住,可以得到下面这种效果：$$\frac{d}{dx}y=x$$<br>还有多行公式，用{equation}加{split},但是{aligned}用不了，不知道为什么。‘\’用来换行，‘&amp;’用来对齐（参见LaTex语法），还有需要注意的是在Hexo上因为会对’\’转义，所以要使用四个反斜杠来换行，此处参考了<a href="http://kubicode.me/2016/03/18/Hexo/The-Trick-about-Hexo-Support-MutliLine-Equation-using-Mathjax/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">这篇博文</a>效果如下：$$\begin{equation}\begin{split}&amp;\quad a+b\<br>&amp;=c+d\<br>&amp;=e+f\end{split}\end{equation}$$</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hihoCoder笔记-持续更新/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -587,7 +713,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
