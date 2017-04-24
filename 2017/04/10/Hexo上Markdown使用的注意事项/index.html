@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！ #1:Latex多行公式行内公式是用\$夹住公式，如\$公式\$这样，比如\$\f">
+<meta name="description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo上Markdown使用的注意事项">
 <meta property="og:url" content="http://yoursite.com/2017/04/10/Hexo上Markdown使用的注意事项/index.html">
 <meta property="og:site_name" content="V1ns0n Notebook">
-<meta property="og:description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！ #1:Latex多行公式行内公式是用\$夹住公式，如\$公式\$这样，比如\$\f">
-<meta property="og:updated_time" content="2017-04-10T08:12:45.000Z">
+<meta property="og:description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！">
+<meta property="og:updated_time" content="2017-04-24T11:49:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo上Markdown使用的注意事项">
-<meta name="twitter:description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！ #1:Latex多行公式行内公式是用\$夹住公式，如\$公式\$这样，比如\$\f">
+<meta name="twitter:description" content="#0:代码块的引用代码块引用的语法是:   (此处有1个空格)```languagecode(此处有1个空格)```  language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。开头加空格！开头加空格！开头加空格！重要事情说三遍！！！">
 
 
 
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -284,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T15:31:15+08:00">
                 2017-04-10
@@ -326,7 +326,7 @@
 <blockquote>
 <p>(此处有1个空格)```language<br>code<br>(此处有1个空格)```</p>
 </blockquote>
-<p>language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。<br>开头加空格！开头加空格！开头加空格！重要事情说三遍！！！</p>
+<p>language指的是语言类型，加了的话可以代码高亮（如果支持）。如果不在开头打一个空格，在某些环境下会出意想不到的问题，我也不知道为什么。<br>开头加空格！开头加空格！开头加空格！重要事情说三遍！！！<a id="more"></a></p>
 <h2 id="1-Latex多行公式"><a href="#1-Latex多行公式" class="headerlink" title="#1:Latex多行公式"></a>#1:Latex多行公式</h2><p>行内公式是用\$夹住公式，如\$公式\$这样，比如\$\frac{1}{x}\$这样会出现$\frac{1}{x}$。<br>行外公式就是用两个\$夹住,可以得到下面这种效果：$$\frac{d}{dx}y=x$$<br>还有多行公式，用{equation}加{split},但是{aligned}用不了，不知道为什么。‘\’用来换行，‘&amp;’用来对齐（参见LaTex语法），还有需要注意的是在Hexo上因为会对’\’转义，所以要使用四个反斜杠来换行，此处参考了<a href="http://kubicode.me/2016/03/18/Hexo/The-Trick-about-Hexo-Support-MutliLine-Equation-using-Mathjax/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">这篇博文</a>效果如下：$$\begin{equation}\begin{split}&amp;\quad a+b\\<br>&amp;=c+d\\<br>&amp;=e+f\end{split}\end{equation}$$</p>
 
       
@@ -425,10 +425,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -449,7 +449,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -519,7 +519,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
