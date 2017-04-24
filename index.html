@@ -247,6 +247,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/微软实习生面试小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="V1ns0n">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="V1ns0n Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/24/微软实习生面试小记/" itemprop="url">
+                  微软实习生面试小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-24T13:25:25+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这次微软实习生（软件工程师）面试我参加了3轮，都是通过Skype线上面的，前两轮主要针对写代码的能力和算法的能力（注重在实现）。最后一轮考察的是程序的设计思路和算法的设计思路（注重在思路）。作为一个本科和直博时期都不是计算机专业的伪程序员加菜鸡，感觉自己基本上被虐的很惨。</p>
+<p>#第一轮<br>先是让我自我介绍然后问了问基本情况，就开始打开白板做题了。</p>
+<p>##第一题：进制转换<br>说实话，第一题很简单，将十进制整数转换成N进制数，我说这个就是通过除法和取余数就可以解决了。然后给了我一个C++函数的框架，让我实现。思路大家都懂，但是自己很久没碰C++了，写起来那叫一个生疏，吭哧吭哧写出来还有一个bug，就是输入的数是0的话，我的程序会输出空字符串，那叫一个尴尬。</p>
+<p>###题目<br>将一个十进制整数转换成N进制数。</p>
+<p>###代码<br> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="comment">//整数转string</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">toString</span><span class="params">(T&amp; value)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">ostringstream</span> oss;</div><div class="line">    oss &lt;&lt; value;</div><div class="line">    <span class="keyword">return</span> oss.str();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//超过9的数字转成字母</span></div><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">convertChar</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(n&gt;<span class="number">9</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x = n - <span class="number">10</span> + <span class="string">'A'</span>;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">string</span>(<span class="number">1</span>, x);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> toString(n);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//进制转换函数，n为需要转换的十进制整数，base为进制，返回string类型</span></div><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">convertBase</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> base)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">string</span> result;</div><div class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        result = <span class="string">'0'</span>;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        result = convertChar(n%base);</div><div class="line">        <span class="keyword">while</span>(n/base!=<span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            n = n / base;</div><div class="line">            result = convertChar(n%base) + result;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> x;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">std</span>::<span class="built_in">cin</span>&gt;&gt;x)</div><div class="line">    &#123;</div><div class="line">    	<span class="comment">//测试用例</span></div><div class="line">        <span class="built_in">cout</span> &lt;&lt; convertBase(x, <span class="number">16</span>) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##第二题：找最小未排序子列</p>
+<p>###题目<br>给一个未排序的数组，求出一个未排序的最小区间，当这个区间里的数组排序之后，整个数组就排好序了。</p>
+<p>####样例输入<br>[1, 3， 4， 2， 5]</p>
+<p>####样例输出<br>[1, 3] （index从0开始）</p>
+<p>###思路1<br>这道题我现在能想到的时间复杂度最低的方法就是先复制一个原数组，然后排序，再逐个比较对应index上的数，最左边的不一样的数对应的index就是左区间，最右边的不一样的数对应的index就是右区间。这个的时间复杂度应该是NlogN+N～NlogN，也就是线性对数复杂度，但是缺点是需要额外空间N。</p>
+<p>###代码<br> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Iterator&gt;</div><div class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; findUnsortedInterval(Iterator first, Iterator last)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//取出迭代器所指的数据类型，定义为T</span></div><div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> iterator_traits&lt;Iterator&gt;::value_type T;</div><div class="line">    <span class="comment">//新建一个vector存放数据用于后面排序</span></div><div class="line">    <span class="built_in">vector</span>&lt;T&gt; temp(last-first);</div><div class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(Iterator i=first; i!=last; i++)</div><div class="line">    &#123;</div><div class="line">        temp[index] = *i;</div><div class="line">        index++;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//快速排序</span></div><div class="line">    sort(temp.begin(), temp.end());</div><div class="line">    pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ret(<span class="number">0</span> ,<span class="number">0</span>);</div><div class="line">    Iterator i = first;</div><div class="line">    <span class="keyword">typename</span> <span class="built_in">vector</span>&lt;T&gt;::iterator j = temp.begin();</div><div class="line">    <span class="comment">//逐个比较排序先后的元素</span></div><div class="line">    <span class="keyword">while</span>(i!=last &amp;&amp; j!=temp.end() &amp;&amp; *i==*j)</div><div class="line">    &#123;</div><div class="line">        i++;</div><div class="line">        j++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(i==last || j==temp.end())</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        ret.first = (<span class="keyword">int</span>)(i - first);</div><div class="line">        <span class="keyword">while</span>(i!=last &amp;&amp; j!=temp.end())</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(*i != *j)</div><div class="line">            &#123;</div><div class="line">                ret.second = (<span class="keyword">int</span>)(i - first);</div><div class="line">            &#125;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">6</span>&#125;;</div><div class="line">    /／用例</div><div class="line">    pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; result = findUnsortedInterval(a, a+<span class="number">6</span>);</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&lt;"</span> &lt;&lt; result.first &lt;&lt; <span class="string">", "</span> &lt;&lt; result.second &lt;&lt; <span class="string">"&gt;"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###思路2<br>我在面试时比较紧张，没想到上面的方案，想到了一个时间复杂度$N^2$的算法，就是用插入排序的对逆序数的判断和交换得到左右区间，这个算法时间复杂度高，但是只需要常数级空间，不过会将原数组排序。不过我跟面试官讲这个方案的时候他没太听懂，然后要我写代码并将例子带入解释，然后我又吭哧吭哧写了半天，最后还是有个bug。</p>
+<p>###复杂版代码<br> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Iterator&gt;</div><div class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; complexFindUnsortedInterval(Iterator first, Iterator last)</div><div class="line">&#123;</div><div class="line">    pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ret(INT_MAX,<span class="number">0</span>);</div><div class="line">    <span class="keyword">for</span>(Iterator i=first+<span class="number">1</span>; i!=last; i++)</div><div class="line">    &#123;</div><div class="line">        Iterator j = i;</div><div class="line">        <span class="comment">//就是将插入排序改了改</span></div><div class="line">        <span class="keyword">while</span>(j<span class="number">-1</span>&gt;=first &amp;&amp; *j &lt; *(j<span class="number">-1</span>))</div><div class="line">        &#123;</div><div class="line">            iter_swap(j, j<span class="number">-1</span>);</div><div class="line">            j--;</div><div class="line">            <span class="keyword">if</span>((<span class="keyword">int</span>)(j-first)&lt;ret.first)</div><div class="line">                ret.first = (<span class="keyword">int</span>)(j - first);</div><div class="line">            <span class="keyword">if</span>(ret.second&lt;(<span class="keyword">int</span>)(i-first))</div><div class="line">                ret.second = (<span class="keyword">int</span>)(i - first);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##总结<br>两道这么简单的题就将近写了一个小时，写出来还有bug，自己真是菜鸡，还要勤加练习。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/Hexo上Markdown使用的注意事项/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -736,7 +870,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
