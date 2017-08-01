@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/01/Mac上安装Apache套件教程/index.html">
 <meta property="og:site_name" content="V1ns0n Notebook">
 <meta property="og:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
-<meta property="og:updated_time" content="2017-08-01T06:13:56.000Z">
+<meta property="og:updated_time" content="2017-08-01T06:24:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上安装Apache套件教程">
 <meta name="twitter:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
@@ -331,8 +331,10 @@
 </li>
 <li><p>找到hdfs-site.xml或者自己新建一个这个文件，将如下内容添加进去。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个地方设置的参数的意思是一个文件在hdfs中保存多少份备份，可以用来防止数据意外丢失。</p>
 </li>
+</ol>
+<p>这个地方设置的参数的意思是一个文件在hdfs中保存多少份备份，可以用来防止数据意外丢失。</p>
+<ol>
 <li><p>如果要使用yarn模式，还有一些东西需要配置，参见<a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation" target="_blank" rel="external">官方教程</a>。但是这个教程有一个地方没有说清楚，导致reduce会卡住不动，应该是因为reduce的工作节点找不到map工作节点导致的，参考了<a href="http://www.cnblogs.com/laputa/p/3428191.html" target="_blank" rel="external">这篇博客</a>的方法解决了，但是我不懂其中的原理。做法很简单，就是在/etc/hosts中添加一行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1		你的计算机名</div></pre></td></tr></table></figure>
 </li>
