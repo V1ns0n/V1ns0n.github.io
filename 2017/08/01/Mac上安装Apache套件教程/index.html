@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/01/Mac上安装Apache套件教程/index.html">
 <meta property="og:site_name" content="V1ns0n Notebook">
 <meta property="og:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
-<meta property="og:updated_time" content="2017-08-01T06:32:18.000Z">
+<meta property="og:updated_time" content="2017-08-01T06:33:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上安装Apache套件教程">
 <meta name="twitter:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
@@ -326,17 +326,19 @@
  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ brew install hadoop</div><div class="line">$ brew install hive</div><div class="line">$ brew install apache-spark</div><div class="line">$ brew install scala</div><div class="line">$ brew install sbt</div></pre></td></tr></table></figure>
 <h2 id="配置和使用"><a href="#配置和使用" class="headerlink" title="配置和使用"></a>配置和使用</h2><p>安装很简单，配置很麻烦，主要是一开始很多参数都不知道是什么意思，就是跟着别人教程改，现在了解了其中一些参数的意思，但还是有一些不了解，所以遇到了很多坑。下面所有的配置都是针对伪分布式配置的，就是实际上就只有你本地一台电脑，但是假装是分布式的集群。</p>
 <h3 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h3><p>到目录/usr/local/Cellar/hadoop/[your_version]/libexec/etc/hadoop下：</p>
-<ol>
-<li>修改core-site.xml这个文件中tag\<hadoop.tmp.dir\>的value，这个tag是指定Hadoop的存放临时文件的路径，默认值是/tmp/hadoop-${user.name}，但是在Mac上，tmp这个目录的会在电脑重启后自动清除，所以这会造成每次重启电脑都会导致Hadoop的文件丢失而无法正常启动，每次都得先format，而且hdfs上的数据会丢失。所以一定要把这个值设置成一个不会自动清除的路径。我自己就在当前目录下新建了一个文件夹tmpdir，设置成了/usr/local/Cellar/hadoop/2.8.0/libexec/etc/hadoop/tmpdir。</hadoop.tmp.dir\></li>
-<li>找到hdfs-site.xml或者自己新建一个这个文件，将如下内容添加进去。<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>修改core-site.xml这个文件中tag\<hadoop.tmp.dir\>的value，这个tag是指定Hadoop的存放临时文件的路径，默认值是/tmp/hadoop-${user.name}，但是在Mac上，tmp这个目录的会在电脑重启后自动清除，所以这会造成每次重启电脑都会导致Hadoop的文件丢失而无法正常启动，每次都得先format，而且hdfs上的数据会丢失。所以一定要把这个值设置成一个不会自动清除的路径。我自己就在当前目录下新建了一个文件夹tmpdir，设置成了/usr/local/Cellar/hadoop/2.8.0/libexec/etc/hadoop/tmpdir。</hadoop.tmp.dir\></p>
 </li>
-</ol>
+<li><p>找到hdfs-site.xml或者自己新建一个这个文件，将如下内容添加进去。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line"> 	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>这个地方设置的参数的意思是一个文件在hdfs中保存多少份备份，可以用来防止数据意外丢失。</p>
-<ol>
+<ul>
 <li><p>如果要使用yarn模式，还有一些东西需要配置，参见<a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation" target="_blank" rel="external">官方教程</a>。但是这个教程有一个地方没有说清楚，导致reduce会卡住不动，应该是因为reduce的工作节点找不到map工作节点导致的，参考了<a href="http://www.cnblogs.com/laputa/p/3428191.html" target="_blank" rel="external">这篇博客</a>的方法解决了，但是我不懂其中的原理。做法很简单，就是在/etc/hosts中添加一行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1		你的计算机名</div></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
 <p>你的Mac的计算机名一般可以在系统偏好设置-&gt;共享-&gt;电脑名称下面那行小字找到，一般为your_username-MacBook-Pro.local。</p>
 <h3 id="Hadoop使用"><a href="#Hadoop使用" class="headerlink" title="Hadoop使用"></a>Hadoop使用</h3><p>具体教程可以参见<a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation" target="_blank" rel="external">官方教程</a>，下面简单介绍一下：</p>
 <ol>
