@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。  12345$ brew install hadoop$ brew install hive$ brew install apache-s">
+<meta name="description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac上安装Apache套件教程">
 <meta property="og:url" content="http://yoursite.com/2017/08/01/Mac上安装Apache套件教程/index.html">
 <meta property="og:site_name" content="V1ns0n Notebook">
-<meta property="og:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。  12345$ brew install hadoop$ brew install hive$ brew install apache-s">
-<meta property="og:updated_time" content="2017-08-01T06:06:07.000Z">
+<meta property="og:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
+<meta property="og:updated_time" content="2017-08-01T06:09:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上安装Apache套件教程">
-<meta name="twitter:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。  12345$ brew install hadoop$ brew install hive$ brew install apache-s">
+<meta name="twitter:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
 
 
 
@@ -322,7 +322,7 @@
       
 
       
-        <h1 id="Mac上安装Apache套件教程"><a href="#Mac上安装Apache套件教程" class="headerlink" title="Mac上安装Apache套件教程"></a>Mac上安装Apache套件教程</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装<a href="http://hadoop.apache.org" target="_blank" rel="external">Hadoop</a>、Hive、Spark以及可能需要用到的Scala和sbt。</p>
+        <h1 id="Mac上安装Apache套件教程"><a href="#Mac上安装Apache套件教程" class="headerlink" title="Mac上安装Apache套件教程"></a>Mac上安装Apache套件教程</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装<a href="http://hadoop.apache.org" target="_blank" rel="external">Hadoop</a>、Hive、Spark以及可能需要用到的Scala和sbt。<a id="more"></a></p>
  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ brew install hadoop</div><div class="line">$ brew install hive</div><div class="line">$ brew install apache-spark</div><div class="line">$ brew install scala</div><div class="line">$ brew install sbt</div></pre></td></tr></table></figure>
 <h2 id="配置和使用"><a href="#配置和使用" class="headerlink" title="配置和使用"></a>配置和使用</h2><p>安装很简单，配置很麻烦，主要是一开始很多参数都不知道是什么意思，就是跟着别人教程改，现在了解了其中一些参数的意思，但还是有一些不了解，所以遇到了很多坑。下面所有的配置都是针对伪分布式配置的，就是实际上就只有你本地一台电脑，但是假装是分布式的集群。</p>
 <h3 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h3><p>到目录/usr/local/Cellar/hadoop/[your_version]/libexec/etc/hadoop下：</p>
