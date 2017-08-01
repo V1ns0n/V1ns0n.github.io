@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
+<meta name="description" content="安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
 <meta name="keywords" content="apache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac上安装Apache套件教程">
 <meta property="og:url" content="http://yoursite.com/2017/08/01/Mac上安装Apache套件教程/index.html">
 <meta property="og:site_name" content="V1ns0n Notebook">
-<meta property="og:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
-<meta property="og:updated_time" content="2017-08-01T06:43:29.000Z">
+<meta property="og:description" content="安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
+<meta property="og:updated_time" content="2017-08-01T06:49:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上安装Apache套件教程">
-<meta name="twitter:description" content="Mac上安装Apache套件教程安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
+<meta name="twitter:description" content="安装Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装Hadoop、Hive、Spark以及可能需要用到的Scala和sbt。">
 
 
 
@@ -322,7 +322,7 @@
       
 
       
-        <h1 id="Mac上安装Apache套件教程"><a href="#Mac上安装Apache套件教程" class="headerlink" title="Mac上安装Apache套件教程"></a>Mac上安装Apache套件教程</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装<a href="http://hadoop.apache.org" target="_blank" rel="external">Hadoop</a>、Hive、Spark以及可能需要用到的Scala和sbt。<a id="more"></a></p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac上有Homebrew神器，安装这些东西都是一条命令的事情，麻烦的是配置。首先在Mac上安装Homebrew和Java。然后通过下面的命令，分别安装<a href="http://hadoop.apache.org" target="_blank" rel="external">Hadoop</a>、Hive、Spark以及可能需要用到的Scala和sbt。<a id="more"></a></p>
  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ brew install hadoop</div><div class="line">$ brew install hive</div><div class="line">$ brew install apache-spark</div><div class="line">$ brew install scala</div><div class="line">$ brew install sbt</div></pre></td></tr></table></figure>
 <h2 id="配置和使用"><a href="#配置和使用" class="headerlink" title="配置和使用"></a>配置和使用</h2><p>安装很简单，配置很麻烦，主要是一开始很多参数都不知道是什么意思，就是跟着别人教程改，现在了解了其中一些参数的意思，但还是有一些不了解，所以遇到了很多坑。下面所有的配置都是针对伪分布式配置的，就是实际上就只有你本地一台电脑，但是假装是分布式的集群。</p>
 <h3 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h3><p>到目录/usr/local/Cellar/hadoop/[your_version]/libexec/etc/hadoop下：</p>
@@ -546,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac上安装Apache套件教程"><span class="nav-number">1.</span> <span class="nav-text">Mac上安装Apache套件教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置和使用"><span class="nav-number">1.2.</span> <span class="nav-text">配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop配置"><span class="nav-number">1.2.1.</span> <span class="nav-text">Hadoop配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">Hadoop使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive配置"><span class="nav-number">1.2.3.</span> <span class="nav-text">Hive配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive使用"><span class="nav-number">1.2.4.</span> <span class="nav-text">Hive使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark配置"><span class="nav-number">1.2.5.</span> <span class="nav-text">Spark配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark使用"><span class="nav-number">1.2.6.</span> <span class="nav-text">Spark使用</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置和使用"><span class="nav-number">2.</span> <span class="nav-text">配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop配置"><span class="nav-number">2.1.</span> <span class="nav-text">Hadoop配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop使用"><span class="nav-number">2.2.</span> <span class="nav-text">Hadoop使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive配置"><span class="nav-number">2.3.</span> <span class="nav-text">Hive配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive使用"><span class="nav-number">2.4.</span> <span class="nav-text">Hive使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark配置"><span class="nav-number">2.5.</span> <span class="nav-text">Spark配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark使用"><span class="nav-number">2.6.</span> <span class="nav-text">Spark使用</span></a></li></ol></li></ol></div>
             
 
           </div>
